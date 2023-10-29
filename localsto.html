@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button onclick="fun()">btn</button>
+    <script>
+        function fun(){
+           let a= document.getElementById("txt").value
+           localStorage.setItem("name",a)
+           document.write(localStorage.getItem("name"))
+        }
+        // localStorage.setItem("name","kirubakaran")
+        // localStorage.setItem("password","9600899009")
+        // // localStorage.removeItem("name")
+        // // localStorage.clear()
+        // let a=localStorage.getItem("name")
+        // document.write(a)
+    </script>
+</body>
+</html>
