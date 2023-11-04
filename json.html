@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>no</th>
+            <th>depat</th>
+        </tr>
+    </thead>
+    <tbody id="addon">
+
+    </tbody>
+</table>
+
+    <script>
+        fetch("json.json")
+        .then((response)=>{
+            return response.json()
+        })
+        .then((students)=>{
+        let a=document.getElementById("addon")
+        let out=""
+        students.map(e=>{
+            out+= `<tr>
+                    <td>${e.name}</td>
+                    <td>${e.no}</td>
+                    <td>${e.depat}</td>
+                </tr>`
+        })
+        a.innerHTML=out
+        })
+      </script>
+
+      </body>
+</html>
