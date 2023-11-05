@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="num" onkeypress="iteration()">
+<!-- <button onclick="iteration()">click</button> -->
+<select id="sel"onclick="another()"></select>
+<!-- <select  id="addon" ></select> -->
+<label for="username" >username</label>
+<input type="text" id="user">
+<label for="password">password</label>
+<input type="password" id="user">
+
+<script>
+    function iteration(){
+    let number=parseInt(document.getElementById("num").value)
+    for(i=0;i<=number;i++)
+    {
+        document.getElementById("sel").innerHTML+="<option>"+i+"</option>"
+    }
+    }
+
+    // function another(){
+    //     let num=parseInt(document.getElementById("sel").value)
+    // for(j=0;j<=num;j++)
+    // {
+    //     document.getElementById("addon").innerHTML+="<option>"+j+"</option>"
+    // }
+    // }
+
+    </script>
+
+</body>
+</html>

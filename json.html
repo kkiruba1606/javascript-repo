@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-<table>
+  </head>
+  <body>
+    <!-- <table>
     <thead>
         <tr>
             <th>name</th>
@@ -14,29 +14,52 @@
             <th>depat</th>
         </tr>
     </thead>
-    <tbody id="addon">
+    <tbody id="table">
 
     </tbody>
-</table>
+</table> -->
+
+    <!-- method 1 in table data -->
+    <ol id="order"></ol>
 
     <script>
-        fetch("json.json")
-        .then((response)=>{
-            return response.json()
-        })
-        .then((students)=>{
-        let a=document.getElementById("addon")
-        let out=""
-        students.map(e=>{
-            out+= `<tr>
-                    <td>${e.name}</td>
-                    <td>${e.no}</td>
-                    <td>${e.depat}</td>
-                </tr>`
-        })
-        a.innerHTML=out
-        })
-      </script>
+      // fetch("json.json")
+      // .then((response)=>{
+      //     return response.json()
+      // })
+      // .then((students)=>{
+      // let a=document.getElementById("table")
+      // let out=""
+      // students.map(e=>{
+      //     out+= `<tr>
+      //             <td>${e.name}</td>
+      //             <td>${e.no}</td>
+      //             <td>${e.depat}</td>
+      //         </tr>`
+      // })
+      // a.innerHTML=out
+      // })
 
-      </body>
+      // method 2 list data
+      fetch("https://fakestoreapi.com/products")
+        .then((res) => res.json())
+        .then((data) => {
+          data.map((e) => {
+            let newdiv=document.createElement("div")
+            let im=document.createElement("img")
+            newdiv.append(im)
+            document.body.appendChild(newdiv)
+            im.setAttribute("src",e.image)
+            im.style.height="300px"
+            im.style.width="300px"
+
+            // list of data fetching  api......................
+            // let a=document.getElementById("order")
+            // let list=document.createElement("li")
+            // a.append(list)
+            // list.innerHTML+=`title ${e.title} </br> price <b>${e.price}</b>`
+          });
+        });
+    </script>
+  </body>
 </html>
